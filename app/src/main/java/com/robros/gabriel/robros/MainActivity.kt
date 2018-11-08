@@ -13,11 +13,14 @@ PositionRecyclerView.fListener,
 DrinkRecyclerView.fListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         setActionBar(toolbar)
+
         val tr = supportFragmentManager.beginTransaction()
-        tr.add(R.id.contentFrame, PositionRecyclerView.newInstance())
+        tr.replace(R.id.contentFrame, PositionRecyclerView.newInstance())
         tr.commit()
     }
 
