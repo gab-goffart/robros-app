@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">robros robot-serveur</string>
+
+    <string name="salut">Salut!</string>
+    <string name="rafraichissementQuestion">Veuillez choisir votre rafraichissement</string>
+</resources>
