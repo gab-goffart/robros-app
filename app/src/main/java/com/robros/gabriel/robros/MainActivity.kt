@@ -18,7 +18,9 @@ class MainActivity : FragmentActivity(),
 PositionRecyclerView.fListener,
 DrinkRecyclerView.fListener {
 
+    //Default UUID for serial Bluetooth communication
     private val uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb")
+    //MAC addres of our Bluetooth chip
     private val address = "00:1B:10:30:09:C0"
 
     private var socket: BluetoothSocket? = null
@@ -63,8 +65,6 @@ DrinkRecyclerView.fListener {
 
         if(socket == null || !socket!!.isConnected) {
 
-            Snackbar.make(appbar, "Nouvelle tentative de connexion ... ", Snackbar.LENGTH_LONG).show()
-
             try {
                 btConnect()
             } catch (ex: Exception) {
@@ -80,6 +80,7 @@ DrinkRecyclerView.fListener {
     }
 
     override fun onDestroy() {
+
         if(socket != null ) {
             if(socket!!.isConnected){
                 socket!!.close()
@@ -89,7 +90,8 @@ DrinkRecyclerView.fListener {
         super.onDestroy()
     }
 
-    fun btConnect() {
+    private fun btConnect() {
+
         val bt = BluetoothAdapter.getDefaultAdapter()
 
         if(!bt.isEnabled) {
@@ -112,8 +114,7 @@ DrinkRecyclerView.fListener {
         } catch (ex: IOException) {
             throw Exception("Impossible de joindre le robot. ")
         }
+
     }
 
 }
-
-
