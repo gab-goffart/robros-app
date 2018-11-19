@@ -10,7 +10,7 @@ import com.robros.gabriel.robros.R
 import com.robros.gabriel.robros.fragments.DrinkRecyclerView
 import kotlinx.android.synthetic.main.drink_card.view.*
 
-class DrinkAdapter(var drinks: ArrayList<Drink>,val pos: Number, var mListener: DrinkRecyclerView.fListener?): RecyclerView.Adapter<DrinkAdapter.ViewHolder>()  {
+class DrinkAdapter(var drinks: ArrayList<Drink>,val pos: Int, var mListener: DrinkRecyclerView.fListener?): RecyclerView.Adapter<DrinkAdapter.ViewHolder>()  {
 
     override fun getItemCount() = drinks.size
 

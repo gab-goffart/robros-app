@@ -3,7 +3,7 @@ package com.robros.gabriel.robros.fragments
 import android.support.v4.app.Fragment
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +34,7 @@ class PositionRecyclerView : Fragment() {
 
         //TODO: add the adapter
         view.positionRecyclerView.adapter = PositionAdapter(positions, listener)
-        view.positionRecyclerView.layoutManager = GridLayoutManager(view.context,2)
+        view.positionRecyclerView.layoutManager = LinearLayoutManager(view.context)
         return view
     }
 
