@@ -63,7 +63,7 @@ DrinkRecyclerView.fListener {
         //TODO: Envoyer la commande via Bluetooth LE
         val infos = commande.position.toString() + "," + commande.drink.id
 
-        if(socket == null || !socket!!.isConnected) {
+        if(socket == null) {
 
             try {
                 btConnect()
@@ -71,6 +71,10 @@ DrinkRecyclerView.fListener {
                 Snackbar.make(appbar, ex.localizedMessage, Snackbar.LENGTH_LONG).show()
                 return
             }
+        }
+
+        if(!socket!!.isConnected) {
+            socket!!.connect()
         }
 
         socket!!.outputStream.write(infos.toByteArray())
